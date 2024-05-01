@@ -1,0 +1,39 @@
+.wrapper {
+    border: 1px solid #FF460B;
+    border-radius: 8px;
+    -webkit-box-shadow: -6px 6px 8px -1px rgba(255, 70, 11, 0.74);
+    -moz-box-shadow: -6px 6px 8px -1px rgba(255, 70, 11, 0.74);
+    box-shadow: -6px 6px 8px -1px rgba(255, 70, 11, 0.74);
+}
+
+.text-oranged {
+    color: #FF460B;
+}
+
+.border-oranged {
+    background-color: #FFF;
+    border: 1px solid #FF460B!important;
+}
+
+.border-oranged:hover {
+    background-color: #ff3e04 !important;
+    border: 1px solid #FF460B;
+    transition: 700ms;
+}
+
+.login-input-form {
+    border: 1px solid #FF460B !important;
+}
+
+.login-input-form:hover {
+    border: 1px solid #FF460B !important;
+}
+
+.navigate-register-btn {
+    cursor: pointer;
+}
+
+.forget-btn{
+    border: 0px;
+    background-color: #fff;
+}

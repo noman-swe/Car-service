@@ -1,0 +1,40 @@
+.register-form {
+    border: 1px solid #FF460B;
+    margin-top: 40px;
+    border-radius: 8px;
+    -webkit-box-shadow: -6px 6px 8px -1px rgba(255, 70, 11, 0.74);
+    -moz-box-shadow: -6px 6px 8px -1px rgba(255, 70, 11, 0.74);
+    box-shadow: -6px 6px 8px -1px rgba(255, 70, 11, 0.74);
+}
+
+.color-oranged {
+    color: #FF460B;
+}
+
+.form-group {
+    margin: 8px 0px;
+}
+
+.btn-submit,
+.form-group input {
+    border: 1px solid #FF460B;
+    border-radius: 4px;
+    font-size: 18px;
+    padding: 4px 10px;
+}
+
+.btn-submit {
+    background-color: #ee592b;
+    color: #fff;
+}
+.disabled-bg{
+    background-color: #ec8461;
+}
+/* input[type='checkbox'] {
+    
+} */
+
+.btn-submit:hover {
+    /* background-color: #FF460B; */
+    /* color: #fff; */
+}

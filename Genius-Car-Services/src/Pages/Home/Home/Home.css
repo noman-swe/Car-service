@@ -1,0 +1,21 @@
+@media only screen and (max-width:568px) {
+    .home-container {
+        margin: 0 75px;
+        background-color: aquamarine;
+    }
+
+}
+
+@media only screen and (min-width:570px) and (max-width:990px) {
+    .home-container {
+        margin: 0 100px;
+    }
+
+}
+
+@media only screen and (min-width:992px) {
+    .home-container {
+        margin: 0 100px;
+    }
+
+}

@@ -1,0 +1,36 @@
+.services-container {
+    margin: 40px auto;
+
+}
+
+.services-container h3 {
+    text-align: center;
+    color: darkslateblue;
+    font-size: 34px;
+    margin-bottom: 50px;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 50px auto;
+    grid-gap: 60px;
+}
+
+/* services responsive */
+
+/* sm-devices */
+@media only screen and (max-width: 780px) {
+    .services {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 auto;
+        width: 315px;
+    }
+}
+
+/* md-devices */
+@media only screen and (min-width:781px) and (max-width:991px) {
+    .services {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

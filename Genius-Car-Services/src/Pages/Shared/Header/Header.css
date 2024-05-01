@@ -1,0 +1,20 @@
+.bg-custom{
+    background-color: #363f47;
+}
+.nav-link-infos a {
+    color: #FF460B !important;
+}
+
+.dropdown-menu {
+    background-color: #262a2e !important;
+}
+.dropdown-menu a:hover {
+    background-color: #363f47 !important;
+}
+.log-out{
+    background-color: #FF460B;
+    border: 0px;
+    
+    
+
+}

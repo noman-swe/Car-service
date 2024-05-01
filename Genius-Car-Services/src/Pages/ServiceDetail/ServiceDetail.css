@@ -1,0 +1,8 @@
+.btn-checkout {
+    border-radius: 6px !important;
+}
+
+.btn-checkout:hover {
+    color: #FF460B !important;
+    border-radius: 2px solid #FF460B;
+}

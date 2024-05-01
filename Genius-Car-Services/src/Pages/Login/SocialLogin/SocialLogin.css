@@ -1,0 +1,36 @@
+.social-btn-google {
+    background-color: #fff;
+    border: 1px solid #FF460B;
+    color: #000;
+}
+
+.social-btn-google:hover {
+    background-color: aliceblue;
+    color: #FF460B;
+    border: 1px solid rgb(176, 182, 187);
+}
+
+.social-btn-fb {
+    background-color: #86ccf7;
+    border: 1px solid #32A6EE;
+    color: #000;
+}
+
+.social-btn-fb:hover {
+    background-color: #4cb3f3;
+    color: #ffff;
+    border: 1px solid #2d698f;
+
+}
+
+.social-btn-github {
+    background-color: #b4b3b3;
+    border: 1px solid #FF460B;
+    color: #000;
+}
+
+.social-btn-github:hover {
+    background-color: #696969;
+    color: #FF460B;
+    border: 1px solid #1f1e1e;
+}

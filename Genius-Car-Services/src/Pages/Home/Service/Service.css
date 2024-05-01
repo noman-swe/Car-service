@@ -1,0 +1,45 @@
+.service {
+    width: 20rem;
+    height: 520px;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+}
+
+.service-wrapper img {
+    width: 300px;
+    height: 260px;
+    margin: 10px;
+    border-radius: 6px;
+}
+
+.service-info {
+    margin-left: 13px;
+}
+
+.service-info h2 {
+    font-size: 30px;
+    color: rgb(97, 84, 177);
+}
+
+.service-info p {
+    font-size: 16px;
+}
+
+.btn-book-service {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border: 0px;
+    border-radius: 0px 0px 8px 8px;
+    padding: 10px 0px;
+    font-size: 16px;
+    background-color: rgb(162, 176, 190);
+}
+
+.btn-book-service:hover{
+background-color: slategray;
+transition: 600ms;
+}

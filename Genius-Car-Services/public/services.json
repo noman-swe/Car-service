@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Oil Change",
+        "price": "100",
+        "description": "An oil change service, however, is the changing of the oil; plus a safety inspection that examines the oil filter, cabin filter, a check of brake pads, tires, fluids, etc. The price for an oil change service is usually higher because of the extra care, value, and reports placed into the inspection.",
+        "img": "https://i.ibb.co/1LYGQPV/Oil-Change-Services.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Engine Dianostic",
+        "price": "200",
+        "description": "When your check engine or service engine light comes on, it’s your car’s way of telling you that something is not right. Now, this fault could just be a loose gas cap or a major engine backfire or any number of things in between.helps mechanics pinpoint problems quickly, allowing for more efficient repairs. This saves time and money.",
+        "img": "https://i.ibb.co/bmbLvHm/engine-Dianostcs.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Tyres & Wheels",
+        "price": "150",
+        "description": "Wheels allow your car’s tires to bolted to your vehicle’s axles, but they can also add to its style and performance. Some wheels are still made from traditional steel and include a decorative hub cap, but many of today’s wheels are cast or forged from advanced steels alloys, aluminum alloys, or even magnesium or cutting-edge carbon fiber. Wheels must translate your car’s accelerating, braking, and turning forces to the road while holding your tires in place and helping them maintain pressure.",
+        "img": "https://i.ibb.co/6vJB3xT/Tire-and-wheel.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Repairs And Replacements",
+        "price": "300",
+        "description": "Not using genuine replacement parts is like giving your car an identity crisis, we keep things authentic with GENUINE replacement parts. The decision is normally made using cost factors, with one rule of thumb used by industry being the “50 percent rule” with the basic tenet being if a repair exceeds 50 percent of the total cost of replacing the item, then go with the replacement.",
+        "img": "https://i.ibb.co/MMwtFb4/Repairs-and-Replacement.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Painting",
+        "price": "350",
+        "description": "Our team of auto paint professionals is equipped with over 18 years of experience in automotive painting. That’s why we are committed to making the experience easy and affordable for you while providing reliable services, backed by our 5-year guarantee. Let us transform your vehicle with a fresh coat of paint, and soon you’ll be driving the car you always wanted, again.",
+        "img": "https://i.ibb.co/mvy7NjW/car-painting.webp"
+    },
+    {
+        "id": 6,
+        "name": "Denting",
+        "price": "160",
+        "description": "When it comes to automotive reconditioning, Fast Car has no match in the UAE. Our highly professional experts have been dedicated to continuous innovation and excellence in damage repairs. From scratches and corrosion to complete modification after a collision, our seasoned specialists can handle it all. We restore vehicles to their original look and feel with specialized interior repairs and auto painting.",
+        "img": "https://i.ibb.co/TPmFyv3/denting.jpg"
+    }
+]
