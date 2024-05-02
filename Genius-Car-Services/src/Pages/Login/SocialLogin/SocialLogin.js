@@ -20,7 +20,7 @@ const SocialLogin = () => {
     }
 
     if (loading || loadingGit) {
-        return <Loading></Loading>
+        return <Loading></Loading>;
     }
 
     if (user || userGit) {
