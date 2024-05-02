@@ -44,6 +44,21 @@ async function run() {
             res.send(service);
         })
 
+        // adding POST API to receive data from client side
+        app.post('/service', async (req, res) => {
+            const newService = req.body;
+            const result = await serviceCollection.insertOne(newService);
+            res.send(result);
+        })
+
+        // DELETE
+        app.delete('/service/:id', async(req, res) => {
+            const id = req.params.id;
+            const query = {_id : new ObjectId(id)};
+            const result = serviceCollection.deleteOne(query);
+            res.send(result);
+        })
+
     } finally {
         // Ensures that the client will close when you finish/error
         // await client.close();

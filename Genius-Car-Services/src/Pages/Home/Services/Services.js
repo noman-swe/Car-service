@@ -1,15 +1,9 @@
-import React, { useEffect, useState } from 'react';
 import './Services.css';
 import Service from '../Service/Service';
+import useServices from '../../../hooks/useServices';
 
 const Services = () => {
-    const [services, setServices] = useState([]);
-    useEffect(() => {
-        const url = `http://localhost:5000/service`;
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setServices(data))
-    }, []);
+    const [services] = useServices();
 
     return (
         <div className="container" id='services'>

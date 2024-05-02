@@ -3,8 +3,9 @@ import { useForm } from 'react-hook-form';
 
 const AddService = () => {
     const { register, handleSubmit } = useForm();
+
     const onSubmit = data => {
-        console.log(data);
+        alert('service added', data);
         // adding fetch add POST method to send data to Backend
         const url = 'http://localhost:5000/service';
         fetch(url, {
