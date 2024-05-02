@@ -4,11 +4,12 @@ import Service from '../Service/Service';
 
 const Services = () => {
     const [services, setServices] = useState([]);
+    const url = `http://localhost:5000/service`;
     useEffect(() => {
-        fetch('services.json')
+        fetch('http://localhost:5000/service')
             .then(res => res.json())
             .then(data => setServices(data))
-    }, []);
+    }, [url]);
 
     return (
         <div className="container" id='services'>
@@ -18,7 +19,7 @@ const Services = () => {
                     {
                         services.map(service => <Service
                             service={service}
-                            key={service.id}
+                            key={service._id}
                         ></Service>)
                     }
                 </div>
