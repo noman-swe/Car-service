@@ -7,7 +7,7 @@ const ManageServices = () => {
     const handleDelete = id => {
         const proceed = window.confirm('are you sure to delete?');
         if (proceed) {
-            console.log('backend e jaw');
+            // console.log('backend e jaw');
             const url = `http://localhost:5000/service/${id}`;
             fetch(url, {
                 method: 'DELETE',
