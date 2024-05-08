@@ -12,6 +12,7 @@ import Register from './Pages/Login/Register/Register';
 import Login from './Pages/Login/Login/Login';
 import AddService from './Pages/AddService/AddService';
 import ManageServices from './Pages/ManageServices/ManageServices';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -51,13 +52,16 @@ function App() {
         </Route>
         <Route path='/manage' element={
           <RequireAuth>
-            <ManageServices></ManageServices> 
+            <ManageServices></ManageServices>
           </RequireAuth>
         } >
         </Route>
 
       </Routes>
       <Footer></Footer>
+
+      <ToastContainer></ToastContainer>
+
     </div>
   );
 }

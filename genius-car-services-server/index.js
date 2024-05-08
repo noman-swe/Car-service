@@ -26,6 +26,7 @@ async function run() {
         // Connect the client to the server	(optional starting in v4.7)
         await client.connect();
         const serviceCollection = client.db('geniusCar').collection('services');
+        const orderCollection = client.db('geniusCar').collection('order');
         // console.log("You successfully connected to MongoDB!");
 
         // app.get: Read & cursor and find
@@ -44,6 +45,7 @@ async function run() {
             res.send(service);
         })
 
+
         // adding POST API to receive data from client side
         app.post('/service', async (req, res) => {
             const newService = req.body;
@@ -52,10 +54,17 @@ async function run() {
         })
 
         // DELETE
-        app.delete('/service/:id', async(req, res) => {
+        app.delete('/service/:id', async (req, res) => {
             const id = req.params.id;
-            const query = {_id : new ObjectId(id)};
+            const query = { _id: new ObjectId(id) };
             const result = serviceCollection.deleteOne(query);
+            res.send(result);
+        })
+
+         // order collection API
+         app.post('/order', async (req, res) => {
+            const order = req.body;
+            const result = await orderCollection.insertOne(order);
             res.send(result);
         })
 
