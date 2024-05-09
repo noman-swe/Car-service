@@ -60,9 +60,21 @@ async function run() {
             const result = serviceCollection.deleteOne(query);
             res.send(result);
         })
-
-         // order collection API
-         app.post('/order', async (req, res) => {
+        /* 
+        --------------> ORDER
+        --------------> ORDER
+        --------------> ORDER
+        */
+        //    find all order
+        app.get('/orders', async (req, res) => {
+            const email = req.query.email;
+            const query = { email: email };
+            const cursor = orderCollection.find(query);
+            const orders = await cursor.toArray();
+            res.send(orders);
+        });
+        // order collection API
+        app.post('/order', async (req, res) => {
             const order = req.body;
             const result = await orderCollection.insertOne(order);
             res.send(result);
