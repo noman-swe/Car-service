@@ -9,10 +9,10 @@ import Loading from '../../Shared/Loading/Loading';
 const Register = () => {
 
     const navigate = useNavigate();
-    const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const [createUserWithEmailAndPassword, user, loading] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const [agree, setAgree] = useState(false);
-    const [updateProfile, updating, errorOfUpdate] = useUpdateProfile(auth);
+    const [updateProfile, updating] = useUpdateProfile(auth);
 
     if (loading || updating) {
         return <Loading></Loading>
@@ -32,7 +32,7 @@ const Register = () => {
 
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
-        console.log('Updated Profile');
+        
         navigate('/home');
     }
 
@@ -41,7 +41,7 @@ const Register = () => {
     }
 
     if (user) {
-        console.log('User:', user);
+        // console.log('User:', user);
     }
 
     return (

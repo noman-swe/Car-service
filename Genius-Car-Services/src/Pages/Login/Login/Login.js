@@ -10,6 +10,8 @@ import Loading from '../../Shared/Loading/Loading';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PageTitle from '../../Shared/PageTitle/PageTitle';
+import axios from 'axios';
+
 
 const Login = () => {
 
@@ -20,12 +22,17 @@ const Login = () => {
     const location = useLocation();
     const [sendPasswordResetEmail, sending, errorPassReset] = useSendPasswordResetEmail(auth);
 
-    const handleFormSubmit = event => {
+    const handleFormSubmit = async event => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
-        signInWithEmailAndPassword(email, password);
+        await signInWithEmailAndPassword(email, password);
+        const url = 'http://localhost:5000/getToken';
+        const { data } = await axios.post(url, { email });
+        console.log(data);
+        localStorage.setItem("accessToken", data.accessToken);
+        navigate(form, { replace: true });
     }
 
     let errorElement;
@@ -37,7 +44,7 @@ const Login = () => {
     // this is added for solving error - //Cannot update a component (`BrowserRouter`) while rendering a different component (`Login`). To locate the bad setState() call inside `Login`
     useEffect(() => {
         if (user) {
-            navigate(form, { replace: true });
+            // navigate(form, { replace: true });
         }
     }, [user, form, navigate]);
 
@@ -108,7 +115,7 @@ const Login = () => {
 
                 </div>
             </Card>
-            
+
         </div>
     );
 };
