@@ -12,11 +12,11 @@ app.use(express.json());
 function verifyJWT(req, res, next) {
     // client side theke pathano authoraization ta ke pai kina dekhi
     const authHeader = req.headers.authorization;
-    // console.log("inside JWT", authHeader);
+    console.log("inside JWT", authHeader);
     if (!authHeader) {
         return res.status(401).send({ message: "Unauthorized Access" });
     }
-    const token = authHeader.split(" ")[1];
+    const token = authHeader.split(' ')[1];
     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
         if (err) {
             return res.status(403).send({ message: 'Forbiden Access' })

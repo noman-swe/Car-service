@@ -5,7 +5,7 @@ const axiosPrivate = axios.create({});
 // Add a request interceptor
 axiosPrivate.interceptors.request.use(function (config) {
     // Do something before request is sent
-    if (config.headers.authorization) {
+    if (!config.headers.authorization) {
         config.headers.authorization = `Bearer ${localStorage.getItem('accessToken')}`;  
     }
     return config;
