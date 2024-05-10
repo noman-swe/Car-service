@@ -1,9 +1,9 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
+import axiosPrivate from '../api/axiosPrivate';
 
 const Orders = () => {
     const [orders, setOrders] = useState([]);
@@ -15,11 +15,7 @@ const Orders = () => {
             const url = `http://localhost:5000/orders?email=${email}`;
             // console.log(url);
             try {
-                const { data } = await axios.get(url, {
-                    headers: {
-                        "authorization": `Bearer ${localStorage.getItem('accessToken')}`
-                    }
-                });
+                const { data } = await axiosPrivate.get(url);
                 setOrders(data);
             }
             catch (error) {
@@ -31,7 +27,8 @@ const Orders = () => {
             }
         }
         getOrders();
-    }, [user])
+    }, [user]);
+
     return (
         <div>
             <h2>Orders : {orders.length}</h2>

@@ -12,7 +12,7 @@ app.use(express.json());
 function verifyJWT(req, res, next) {
     // client side theke pathano authoraization ta ke pai kina dekhi
     const authHeader = req.headers.authorization;
-    console.log("inside JWT", authHeader);
+    // console.log("inside JWT", authHeader);
     if (!authHeader) {
         return res.status(401).send({ message: "Unauthorized Access" });
     }
