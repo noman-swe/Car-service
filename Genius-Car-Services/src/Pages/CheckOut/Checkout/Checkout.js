@@ -24,7 +24,7 @@ const Checkout = () => {
         // send order to server 
         axios.post('http://localhost:5000/order', order)
             .then(response => {
-                console.log(response);
+                // console.log(response);
                 const { data } = response;
                 if (data.insertedId) {
                     toast(`Hi ${user?.displayName}, Your Order is Placed.`);

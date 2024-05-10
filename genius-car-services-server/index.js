@@ -9,6 +9,24 @@ const cors = require('cors');
 app.use(cors());
 app.use(express.json());
 
+function verifyJWT(req, res, next) {
+    // client side theke pathano authoraization ta ke pai kina dekhi
+    const authHeader = req.headers.authorization;
+    console.log("inside JWT", authHeader);
+    if (!authHeader) {
+        return res.status(401).send({ message: "Unauthorized Access" });
+    }
+    const token = authHeader.split(" ")[1];
+    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
+        if (err) {
+            return res.status(403).send({ message: 'Forbiden Access' })
+        }
+        req.decoded = decoded;
+        next();
+    })
+
+}
+
 // connection string
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.xmq0nwv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
@@ -66,13 +84,19 @@ async function run() {
         --------------> ORDER
         --------------> ORDER
         */
-        //    find all order
-        app.get('/orders', async (req, res) => {
+        //    find all order by email
+        app.get('/orders', verifyJWT, async (req, res) => {
+            const decodedEmail = req.decoded.email;
             const email = req.query.email;
-            const query = { email: email };
-            const cursor = orderCollection.find(query);
-            const orders = await cursor.toArray();
-            res.send(orders);
+            if (email === decodedEmail) {
+                const query = { email: email };
+                const cursor = orderCollection.find(query);
+                const orders = await cursor.toArray();
+                res.send(orders);
+            }
+            else {
+                res.status(403).send({ message: "Forbiden Access." })
+            }
         });
         // order collection API
         app.post('/order', async (req, res) => {
@@ -87,7 +111,7 @@ async function run() {
             const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
                 expiresIn: '1d'
             });
-            res.send({accessToken});
+            res.send({ accessToken });
 
 
         })
